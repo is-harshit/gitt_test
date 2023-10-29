@@ -1,4 +1,4 @@
-# Define functions for basic operations
+
 def add(x, y):
     return x + y
 
@@ -13,36 +13,33 @@ def divide(x, y):
         return "Cannot divide by zero"
     return x / y
 
-# Main calculator function
 def calculator():
     while True:
-        # Display the menu
-        print("Options:")
+        print("================")
         print("Enter 'add' for addition")
         print("Enter 'subtract' for subtraction")
         print("Enter 'multiply' for multiplication")
         print("Enter 'divide' for division")
         print("Enter 'quit' to end the program")
+        print("================")
+        ch = input(": ")
 
-        user_input = input(": ")
-
-        if user_input == "quit":
+        if ch == "quit":
             break
 
-        if user_input in ("add", "subtract", "multiply", "divide"):
+        if ch in ("add", "subtract", "multiply", "divide"):
             num1 = float(input("Enter first number: "))
             num2 = float(input("Enter second number: "))
 
-            if user_input == "add":
+            if ch == "add":
                 print("Result: ", add(num1, num2))
-            elif user_input == "subtract":
+            elif ch== "subtract":
                 print("Result: ", subtract(num1, num2))
-            elif user_input == "multiply":
+            elif ch == "multiply":
                 print("Result: ", multiply(num1, num2))
-            elif user_input == "divide":
+            elif ch == "divide":
                 print("Result: ", divide(num1, num2))
         else:
             print("Invalid input. Please enter a valid operation.")
 
-# Run the calculator
 calculator()
